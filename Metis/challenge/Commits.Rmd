@@ -54,6 +54,8 @@ sort(table(Week_nb2),decreasing=T)[1:3]
 
 Week_nb3 <- format(log$date, format="%y/%W")
 sort(table(Week_nb3),decreasing=T)[1:3]
+
+
 ```
 
 + _%U -> Weeks 5 and 42 in 2015 are ones with more commits (19)_
@@ -64,23 +66,30 @@ sort(table(Week_nb3),decreasing=T)[1:3]
 ***
 
 #### **2. Over the last year, what day of the week had the most commits?**
+
+
+
 ```{r}
 sort(table(log$date),decreasing=T)[1:3]
 ```
 
 + _Feb 7th, 2015 is the day with more commits (16)_
 
+
 ***
 
 #### **3. Graph the number of commits per day of the week.**
-```{r}
+
+```{r, qplot, fig.width=4,fig.height=3}
 library(lubridate)
 barplot(table(wday(log$date, label=TRUE)))
+
 ```
 
 + _Saturday is the day with more commits (37)_
 
 ***
+
 #### **4. Show us something else interesting about the d3 repository**
 
 + _Let's plot the most used words in the subject of every commit_
